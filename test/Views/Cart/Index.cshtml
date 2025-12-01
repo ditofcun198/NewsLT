@@ -1,0 +1,35 @@
+﻿@model IEnumerable<test.Models.CartItemVM>
+
+<h3>Giỏ hàng</h3>
+
+@if (!Model.Any())
+{
+    <div class="alert alert-info">Giỏ hàng trống.</div>
+}
+else
+{
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Bài viết</th>
+                <th class="text-end">Giá</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var m in Model)
+            {
+                <tr>
+                    <td>@m.Title</td>
+                    <td class="text-end">@m.Price.ToString("n0") đ</td>
+                    <td>
+                        <a href="@Url.Action("Remove","Cart", new { id = m.CartItemID })"
+                           class="btn btn-danger btn-sm">Xóa</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <a href="@Url.Action("Checkout","Order")" class="btn btn-success">Thanh toán</a>
+}

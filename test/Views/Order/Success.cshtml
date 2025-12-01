@@ -1,0 +1,12 @@
+﻿@model test.Models.Order
+
+<h3>Thanh toán thành công!</h3>
+
+<div class="alert alert-success">
+    <strong>Mã đơn:</strong> @Model.OrderID <br />
+    <strong>Tổng tiền:</strong> @Model.TotalAmount.ToString("n0") đ<br />
+    <strong>Phương thức:</strong> @Model.PaymentMethod <br />
+    <strong>Trạng thái:</strong> @Model.PaymentStatus
+</div>
+
+<a href="/" class="btn btn-primary">Trang chủ</a>

@@ -1,0 +1,37 @@
+﻿@model test.Models.CheckoutVM
+
+<h3>Xác nhận thanh toán</h3>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Bài viết</th>
+            <th class="text-end">Giá</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var i in Model.Items)
+        {
+            <tr>
+                <td>@i.Title</td>
+                <td class="text-end">@i.Price.ToString("n0") đ</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<p class="fw-bold text-end">
+    Tổng cộng: @Model.TotalAmount.ToString("n0") đ
+</p>
+
+@using (Html.BeginForm())
+{
+    <label class="form-label">Phương thức thanh toán</label>
+    <select name="PaymentMethod" class="form-select mb-3">
+        <option value="Momo">Momo</option>
+        <option value="ZaloPay">ZaloPay</option>
+        <option value="Bank">Chuyển khoản</option>
+    </select>
+
+    <button class="btn btn-primary">Thanh toán</button>
+}

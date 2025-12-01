@@ -1,0 +1,69 @@
+﻿@{
+    Layout = null;
+    var userName = User.Identity.IsAuthenticated ? User.Identity.Name : "Guest";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - NewsManagement</title>
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/Content/site.css" />
+    <script src="~/Scripts/jquery-3.6.0.min.js"></script>
+    <script src="~/Scripts/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
+        <div class="container">
+            <a class="navbar-brand" href="@Url.Action("Index", "Home")">NewsManagement</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="@Url.Action("Index", "Home")">Trang chủ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="@Url.Action("Index", "Categories")">Danh mục</a></li>
+                    <li class="nav-item"><a class="nav-link" href="@Url.Action("Index", "Cart")">Giỏ hàng</a></li>
+                </ul>
+                <form class="d-flex" action="@Url.Action("Search", "Home")" method="get">
+                    <input class="form-control me-2" type="search" name="q" placeholder="Tìm kiếm..." />
+                    <button class="btn btn-outline-light" type="submit">Tìm</button>
+                </form>
+                <ul class="navbar-nav ms-3">
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="userMenu" role="button" data-bs-toggle="dropdown">
+                                @userName
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><a class="dropdown-item" href="@Url.Action("Profile", "Account")">Hồ sơ</a></li>
+                                <li><a class="dropdown-item" href="@Url.Action("Logout", "Account")">Đăng xuất</a></li>
+                            </ul>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="nav-item"><a class="nav-link" href="@Url.Action("Login", "Account")">Đăng nhập</a></li>
+                        <li class="nav-item"><a class="nav-link" href="@Url.Action("Register", "Account")">Đăng ký</a></li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main content -->
+    <div class="container mb-5">
+        @RenderBody()
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-3 mt-auto">
+        <div class="container text-center">
+            <p>&copy; @DateTime.Now.Year NewsManagement. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

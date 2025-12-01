@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e34d83a1b4f0428f9537eb84f2baa101" Name="Diagram1">
+        <EntityTypeShape EntityType="NewsManagementDBModel.Article" Width="1.5" PointX="3" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NewsManagementDBModel.Cart" Width="1.5" PointX="3" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NewsManagementDBModel.CartItem" Width="1.5" PointX="5.25" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NewsManagementDBModel.Category" Width="1.5" PointX="0.75" PointY="18.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="NewsManagementDBModel.Comment" Width="1.5" PointX="8.25" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="NewsManagementDBModel.MembershipPlan" Width="1.5" PointX="3.75" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="NewsManagementDBModel.MembershipSubscription" Width="1.5" PointX="6" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="NewsManagementDBModel.OrderItem" Width="1.5" PointX="5.25" PointY="21.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="NewsManagementDBModel.Order" Width="1.5" PointX="3" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NewsManagementDBModel.ReadingHistory" Width="1.5" PointX="8.25" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="NewsManagementDBModel.SystemLog" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NewsManagementDBModel.Tag" Width="1.5" PointX="5.25" PointY="30.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NewsManagementDBModel.UserArticleAccess" Width="1.5" PointX="8.25" PointY="20.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="NewsManagementDBModel.User" Width="1.5" PointX="0.75" PointY="13.375" IsExpanded="true" />
+        <AssociationConnector Association="NewsManagementDBModel.FK__Articles__Author__5DCAEF64" ManuallyRouted="false" />
+        <AssociationConnector Association="NewsManagementDBModel.FK__Articles__Catego__5EBF139D" ManuallyRouted="false" />
+        <AssociationConnector Association="NewsManagementDBModel.FK__CartItems__Artic__73BA3083" ManuallyRouted="false" />
+        <AssociationConnector Association="NewsManagementDBModel.FK__Comments__Articl__68487DD7" ManuallyRouted="false" />
+        <AssociationConnector Association="NewsManagementDBModel.FK__OrderItem__Artic__7F2BE32F" ManuallyRouted="false" />
+        <AssociationConnector Association="NewsManagementDBModel.FK__ReadingHi__Artic__10566F31" ManuallyRouted="false" />
+        <AssociationConnector Association="NewsManagementDBModel.FK__UserArtic__Artic__0B91BA14" ManuallyRouted="false" />
+        <AssociationConnector Association="NewsManagementDBModel.FK__Cart__UserID__6E01572D" ManuallyRouted="false" />
+        <AssociationConnector Association="NewsManagementDBModel.FK__CartItems__CartI__72C60C4A" ManuallyRouted="false" />
+        <AssociationConnector Association="NewsManagementDBModel.FK__Comments__Parent__6A30C649" ManuallyRouted="false" />
+        <AssociationConnector Association="NewsManagementDBModel.FK__Comments__UserID__693CA210" ManuallyRouted="false" />
+        <AssociationConnector Association="NewsManagementDBModel.FK__Membershi__PlanI__06CD04F7" ManuallyRouted="false" />
+        <AssociationConnector Association="NewsManagementDBModel.FK__Membershi__UserI__05D8E0BE" ManuallyRouted="false" />
+        <AssociationConnector Association="NewsManagementDBModel.FK__OrderItem__Order__7E37BEF6" ManuallyRouted="false" />
+        <AssociationConnector Association="NewsManagementDBModel.FK__Orders__UserID__7A672E12" ManuallyRouted="false" />
+        <AssociationConnector Association="NewsManagementDBModel.FK__ReadingHi__UserI__0F624AF8" ManuallyRouted="false" />
+        <AssociationConnector Association="NewsManagementDBModel.FK__UserArtic__UserI__0A9D95DB" ManuallyRouted="false" />
+        <AssociationConnector Association="NewsManagementDBModel.ArticleTags" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
